@@ -1,0 +1,25 @@
+img = imread ('templates/ahead.png'); 
+img = rgb2gray(img);
+model = struct('aHead', img);
+imgBody = imread ('templates/abody.png'); 
+imgBody = rgb2gray(imgBody);
+model.aBody = imgBody;
+imgBodyLong = imread ('templates/abodyLong.png'); 
+imgBodyLong = rgb2gray(imgBodyLong);
+model.aBodyLong = imgBodyLong;
+img = imread ('templates/template.png'); 
+img = rgb2gray(img);
+model.aBodyFull = img;
+img = imread ('templates/body_1.png'); 
+img = rgb2gray(img);
+model.aBody1 = img;
+img = imread ('templates/arear.png'); 
+img = rgb2gray(img);
+model.aRear = img;
+img = imread ('templates/bnwFullBody.png'); 
+img = rgb2gray(img);
+model.aBnWFullBody = img;
+
+bg = imread('bgs/bg2.png');
+model.bg = bg;
+save('model.mat', 'model');
